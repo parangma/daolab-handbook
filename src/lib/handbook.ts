@@ -3,7 +3,7 @@ import path from "node:path";
 import { Marked } from "marked";
 
 /**
- * 다오랩 핸드북
+ * 다오랩 8기 핸드북
  *
  * 엔스파이럴 핸드북처럼 mdBook 형식을 따릅니다.
  * content/SUMMARY.md 의 목록 순서가 곧 목차이고,
@@ -11,6 +11,7 @@ import { Marked } from "marked";
  *
  *   - [제목](경로.md)          1단계
  *     - [제목](폴더/경로.md)   2단계 (공백 두 칸 들여쓰기)
+ *       - [제목](폴더/경로.md) 3단계 (공백 네 칸)
  */
 
 const ROOT = path.join(process.cwd(), "content");
@@ -62,7 +63,8 @@ function load() {
     const m = line.match(/^(\s*)- \[(.+?)\]\((.+?\.md)\)\s*$/);
     if (!m) continue;
     const depth = Math.floor(m[1].length / 2);
-    if (depth > 1) fail("SUMMARY.md", `2단계까지만 씁니다: ${line.trim()}`);
+    if (depth > 2) fail("SUMMARY.md", `3단계까지만 씁니다: ${line.trim()}`);
+    if (depth > counter.length) fail("SUMMARY.md", `들여쓰기가 한 번에 두 단계 깊어졌습니다: ${line.trim()}`);
     counter.length = depth + 1;
     counter[depth] = (counter[depth] ?? 0) + 1;
     const file = m[3];

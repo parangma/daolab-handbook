@@ -1,4 +1,4 @@
-/* 다오랩 핸드북: mdBook(엔스파이럴 핸드북) 형식.
+/* 다오랩 8기 핸드북: mdBook(엔스파이럴 핸드북) 형식.
    위쪽 막대 + 왼쪽 번호 목차 + 가운데 본문. 테마 셋(밝게·종이·밤). */
 
 /* 원래 사이트에서 Tailwind가 깔아 주던 기본 초기화(preflight) 중 이 화면이 기대는 부분 */
@@ -205,6 +205,10 @@ body {
 }
 .hb-toc li[data-depth="1"] {
   padding-left: 1.25rem;
+}
+.hb-toc li[data-depth="2"] {
+  padding-left: 2.5rem;
+  font-size: 0.875rem;
 }
 .hb-toc a {
   display: block;

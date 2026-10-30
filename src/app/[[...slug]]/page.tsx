@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getHandbookPage, getHandbookPages } from "@/lib/handbook";
+import { getHandbookPage, getHandbookPages, getHandbookTitle } from "@/lib/handbook";
 
 type Props = { params: Promise<{ slug?: string[] }> };
 
@@ -13,7 +13,7 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = getHandbookPage((await params).slug ?? []);
   if (!page) return {};
-  return { title: page.slug.length ? page.title : { absolute: "다오랩 핸드북" } };
+  return { title: page.slug.length ? page.title : { absolute: getHandbookTitle() } };
 }
 
 export default async function HandbookPage({ params }: Props) {
@@ -53,8 +53,14 @@ export default async function HandbookPage({ params }: Props) {
       </nav>
 
       <footer className="hb-foot">
-        다오랩 핸드북은 다오랩 멤버가 함께 고쳐 쓰는 살아 있는 문서입니다. 엔스파이럴
+        {getHandbookTitle()}은 다오랩 멤버가 함께 고쳐 쓰는 살아 있는 문서입니다. 엔스파이럴
         핸드북의 구조를 빌렸습니다. 개인 이름과 연락처는 싣지 않습니다.
+        <br />
+        원고는{" "}
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ko" target="_blank" rel="license noopener noreferrer">
+          CC BY-SA 4.0
+        </a>
+        , 코드는 MIT 라이선스입니다. 발제를 요약한 페이지는 발제자 동의를 확인한 뒤 적용합니다.
       </footer>
     </article>
   );

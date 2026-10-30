@@ -1,4 +1,4 @@
-# 다오랩 핸드북
+# 다오랩 8기 핸드북
 
 - [들어가며](README.md)
   - [이 핸드북을 고치는 법](contributing.md)
@@ -18,7 +18,12 @@
   - [감사 전하기](guides/thanks.md)
   - [봇과 자동화](guides/automation.md)
 - [기수와 조](cohorts/README.md)
-  - [8기 공동탐색연구](cohorts/8th.md)
+  - [8기 한눈에](cohorts/8th.md)
+  - [공동탐색연구](cohorts/exploration.md)
+  - [조별 심층연구](cohorts/deep/README.md)
+    - [1조 백도씨 · 정체성과 멤버십](cohorts/deep/team-1.md)
+    - [2조 넛지² · 참여와 행동설계](cohorts/deep/team-2.md)
+    - [3조 춤추는 고래 · 동기·보상·인센티브](cohorts/deep/team-3.md)
 - [이론 도구함](resources/README.md)
   - [참여와 행동설계](resources/participation.md)
   - [동기와 보상](resources/motivation.md)
