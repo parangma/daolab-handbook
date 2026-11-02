@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { HandbookShell } from "@/components/HandbookShell";
 import { getHandbookNav, getHandbookTitle } from "@/lib/handbook";
 import "./handbook.css";
@@ -31,6 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </HandbookShell>
       </body>
+      {/* GA4: 쇼케이스 QR 유입(utm_source=qr)도 여기서 집계합니다. */}
+      <GoogleAnalytics gaId="G-9RLYS8D1QB" />
     </html>
   );
 }
