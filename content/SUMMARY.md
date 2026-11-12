@@ -26,6 +26,7 @@
     - [3조 춤추는 고래 · 동기·보상·인센티브](cohorts/deep/team-3.md)
     - [4조 코오너스 · 소유와 거버넌스](cohorts/deep/team-4.md)
     - [5조 5징어 · 커뮤니티형 협업구조](cohorts/deep/team-5.md)
+    - [6조 PRISM · 기술 기반 운영자동화](cohorts/deep/team-6.md)
 - [이론 도구함](resources/README.md)
   - [참여와 행동설계](resources/participation.md)
   - [동기와 보상](resources/motivation.md)
